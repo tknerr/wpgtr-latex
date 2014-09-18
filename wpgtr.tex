@@ -634,9 +634,9 @@ what the business is like -- what you have to do and how to work it.''
 
 \begin{rubycode}
 	
-  avril_quote = "I'm a lot wiser.  Now I know
-  what the business is like -- what you have
-  to do and how to work it."
+ avril_quote = "I'm a lot wiser.  Now I know
+   what the business is like -- what you have
+   to do and how to work it."
 
 \end{rubycode}
 
@@ -941,11 +941,11 @@ The curly braces can also be traded for the words {\bf do} and {\bf
 
 \begin{rubycode}
 
-loop do
-  print "Much better."
-  print "Ah.  More space!"
-  print "My back was killin' me in those crab pincers."
-end
+ loop do
+   print "Much better."
+   print "Ah.  More space!"
+   print "My back was killin' me in those crab pincers."
+ end
 
 \end{rubycode}
 
@@ -1284,7 +1284,7 @@ eye worth of code.
 
  require 'net/http' 
  Net::HTTP.start( 'www.ruby-lang.org', 80 ) do |http| 
-     print( http.get( '/en/LICENSE.txt' ).body ) 
+   print( http.get( '/en/LICENSE.txt' ).body ) 
  end
 
 \end{rubycode}
@@ -3626,12 +3626,12 @@ happen whether he used it or not.
 He started with:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> Object::constants
    => ["Marshal", "String", "Dir", "LoadError", "Float", ... and so on ]
 
-\end{rubycode}
+\end{consolecode}
 
 
 This command lists all the top-level constants.  Classes are also
@@ -3647,18 +3647,18 @@ come with Ruby. \rubyinline|Marshal|,
 But further down the list:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  ... "Struct", "Values", "Time", "Elevator", "Range" ...
 
-\end{rubycode}
+\end{consolecode}
 
 
 {\em Elevator?}  Exactly the kind of class to poke around with.  He
 had a go.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> Elevator::methods
    => ["method", "freeze", "allocate", ... another long list ... ]
@@ -3667,7 +3667,7 @@ had a go.
  irb> Elevator::constants
    => []
 
-\end{rubycode}
+\end{consolecode}
 
 
 Looks like the \rubyinline|Elevator| class had plenty
@@ -3690,7 +3690,7 @@ classes nested inside the \rubyinline|Elevator| class.
 He tried to create an \rubyinline|Elevator| object.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> e = Elevator::new
  ArgumentError: wrong number of arguments (0 for 1), requires a password
@@ -3699,13 +3699,13 @@ He tried to create an \rubyinline|Elevator| object.
          from (irb):2
          from :0
 
-\end{rubycode}
+\end{consolecode}
 
 
 He tried a few passwords.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> e = Elevator::new( "going up" )
  AccessDeniedError: bad password
@@ -3716,21 +3716,21 @@ He tried a few passwords.
  irb> e = Elevator::new( "StairsAreBad" )
  AccessDeniedError: bad password
 
-\end{rubycode}
+\end{consolecode}
 
 
 That was useless.  {\em Oh, wait!}  The maintenance password.  Listed
 in the \rubyinline|class_variables|.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> Elevator::maintenance_password
  NoMethodError: undefined method `maintenance_password' for Elevator:Class
          from (irb):1
          from :0
 
-\end{rubycode}
+\end{consolecode}
 
 
 Hmm.  Instance variables are only available inside an object.  And
@@ -3738,7 +3738,7 @@ class variables are only available inside a class.  How to get at that
 password?
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> class Elevator
  irb>   def Elevator.maintenance_password
@@ -3749,7 +3749,7 @@ password?
  irb> Elevator::maintenance_password
    => "stairs_are_history!"
 
-\end{rubycode}
+\end{consolecode}
 
 
 Alright!  He got the password.  Did you see that?
@@ -3795,13 +3795,13 @@ be altered and overwritten and remolded.  Dr. Cham had the password
 and ownership of the elevator is his.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> e = Elevator.new( "stairs_are_history!" )
  #<Elevator:0x81f12f4 @level=4>
  irb> e.level = 1
 
-\end{rubycode}
+\end{consolecode}
 
 
 Dr. Cham was standing right there when the elevator doors, off behind
@@ -3943,13 +3943,13 @@ And I fed something he said earlier into the method.
 And it came out as a rather plain sentence.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  But, strangely ,
  I learned upon, played upon the
  organs on my home planet.
 
-\end{rubycode}
+\end{consolecode}
 
 
 ``You shouldn't use that (wary-to) while loop,'' he said.  ``There are
@@ -3977,13 +3977,13 @@ If we give \rubyinline|wipe_mutterings_from| the
 number 1, Ruby will print the following and exit.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  NoMethodError: undefined method `include?' for 1:Fixnum
          from (irb):2:in `wipe_mutterings_from'
          from (irb):8
 
-\end{rubycode}
+\end{consolecode}
 
 
 What you see here is a rather twisted and verbose (but at times very
@@ -4049,13 +4049,13 @@ This time, if we pass in a number (again, the number 1), we'll get
 something more sensible.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  ArgumentError: cannot wipe mutterings from a Fixnum
          from (irb):3:in `wipe_mutterings_from'
          from (irb):12
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|respond_to?| method is really nice and
@@ -4739,12 +4739,12 @@ So you start your own class called
 this relationship.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> ArrayMine.superclass
    => Array
 
-\end{rubycode}
+\end{consolecode}
 
 
 Perfect.  We manage a hotel and we have an
@@ -4776,7 +4776,7 @@ First.
 Watch.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> Class.superclass
    => Module
@@ -4787,7 +4787,7 @@ Watch.
  irb> Object.superclass
    => nil
 
-\end{rubycode}
+\end{consolecode}
 
 
 Even \rubyinline|Class| is an
@@ -4847,7 +4847,7 @@ these wretched objects a place to stay!!''
 Now you have to go through Saint Agnes to find them.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  >> WatchfulSaintAgnes::TOOTHLESS_MAN_WITH_FORK
  => ["man", "fork", "exposed gums"]
@@ -4856,7 +4856,7 @@ Now you have to go through Saint Agnes to find them.
  >> WatchfulSaintAgnes::instance_methods
  => ["timid_foxfaced_girl"]
 
-\end{rubycode}
+\end{consolecode}
 
 
 Always remember that a \rubyinline|Module| is only an
@@ -4865,13 +4865,13 @@ inn.  A roof over their heads.  It is not a self-aware
 to life with \rubyinline|new|.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  >> WatchfulSaintAgnes.new
  NoMethodError: undefined method `new' for WatchfulSaintAgnes:Module
          from (irb):2
 
-\end{rubycode}
+\end{consolecode}
 
 
 St. Agnes has given up her whole life in order that she may care for
@@ -4886,14 +4886,14 @@ For this you can use \rubyinline|extend|, which will
 pull all the methods from a module into a class or an object.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  >> class TheTimeWarnerAolCitibankCaringAndLovingFacility; end
  >> TheTimeWarnerAolCitibankCaringAndLovingFacility.extend WatchfulSaintAgnes
  >> TheTimeWarnerAolCitibankCaringAndLovingFacility::instance_methods
  => ["timid_foxfaced_girl"]
 
-\end{rubycode}
+\end{consolecode}
 
 
 In truth, no one's {\em stolen} from
@@ -5372,14 +5372,14 @@ ticket gets one point for every winning number.  The point total is
 returned from the \rubyinline|score| method.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> ticket = LotteryTicket.new( 2, 5, 19 )
  irb> winner = LotteryTicket.new( 4, 5, 19 )
  irb> ticket.score( winner )
    => 2
 
-\end{rubycode}
+\end{consolecode}
 
 
 You will see how brilliant Paij-ree is, in time.  His father
@@ -5467,7 +5467,7 @@ but if you can really plant it in your head, it's a nice timesaver.
 You're just making sure a variable is set before using it.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> LotteryDraw.play.each do |winner, tickets|
  irb>   puts winner + "won on " + tickets.length + " ticket(s)!"
@@ -5484,7 +5484,7 @@ You're just making sure a variable is set before using it.
  Bramlor-exxon won on 1 ticket(s)!
      2, 6, 14: 1
 
-\end{rubycode}
+\end{consolecode}
 
 
 But these salad days were not to continue for Paij-ree and his father.
@@ -5515,13 +5515,13 @@ Earlier, I mentioned that \rubyinline|attr_reader|
 adds {\bf reader} methods, but not {\bf writer} methods.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> ticket = LotteryTicket.new
  irb> ticket.picks = 3
  NoMethodError: undefined method `picks=' for #<LotteryTicket:0xb7d49110>
 
-\end{rubycode}
+\end{consolecode}
 
 
 Which is okay in this case, since Paij-ree's father didn't want the
@@ -5794,13 +5794,13 @@ stay the same.  You can still change the constant, but you'll have to
 be tricky or Ruby will speak up.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> AnimalLottoTicket::NOTES = [:TOOT, :TWEET, :BLAT]
  (irb):3: warning: already initialized constant NOTES
    => [:TOOT, :TWEET, :BLAT]
 
-\end{rubycode}
+\end{consolecode}
 
 
 The gull came back with the grazledon, his name was Merphy, he was
@@ -5979,12 +5979,12 @@ which appeared on a display to the left of his concealed typing.  He
 checked the Ruby version.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> RUBY_VERSION
    => "1.8.3"
 
-\end{rubycode}
+\end{consolecode}
 
 
 Ruby was up-to-date.  What else could he do?  Scanning
@@ -6000,14 +6000,14 @@ started by loading the \rubyinline|`rbconfig`| file to
 get an idea of what Ruby's settings were.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> require 'rbconfig'
    => true
  irb> Config::CONFIG
    => {"abs_srcdir"=>"$(ac_abs_srcdir)", "sitedir"=>"bay://Ruby/lib/site_ruby", ... }
 
-\end{rubycode}
+\end{consolecode}
 
 
 Too much information to sort through there.  The
@@ -6026,7 +6026,7 @@ The Originals or whoever manned this console. He checked a few global
 variables for this information.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> $"
    => ["irb.rb", "e2mmap.rb", "irb/init.rb", ... "rbconfig.rb"]
@@ -6035,7 +6035,7 @@ variables for this information.
        "bay://Ruby/lib/site_ruby", "bay://Ruby/lib/1.9",
        "bay://Ruby/lib/1.9/i686-unknown", "."]
 
-\end{rubycode}
+\end{consolecode}
 
 
 Aha, good.  Dr. Cham stroked his beard and looked over his
@@ -6054,7 +6054,7 @@ file with \rubyinline|require|.  When Dr. Cham ran
 directory in order.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  bay://Ruby/lib/site_ruby/1.9/rbconfig.rb
  bay://Ruby/lib/site_ruby/1.9/i686-unknown/rbconfig.rb (*)
@@ -6063,7 +6063,7 @@ directory in order.
  bay://Ruby/lib/1.9/i686-unknown/rbconfig.rb
  ./rbconfig.rb
 
-\end{rubycode}
+\end{consolecode}
 
 
 The second path was where Ruby ended up finding the rbconfig.rb file.
@@ -6098,12 +6098,12 @@ find some useful classes.''
 Dr. Cham caved.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> 3 * 5
    => 15
 
-\end{rubycode}
+\end{consolecode}
 
 
 ``Okay, great!  We're in business!'' the goat tossed his furry face
@@ -6112,14 +6112,14 @@ about in glee.
 Dr. Cham patted the goat's head, ``Well done.  We can continue.''
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> Dir.chdir( "bay://Ruby/lib/site_ruby/1.9/" )
    => 0
  irb> Dir["./*.{rb}"]
    => ['endertromb.rb', 'mindreader.rb', 'wishmaker.rb']
 
-\end{rubycode}
+\end{consolecode}
 
 
 Dr. Cham had use \rubyinline|chdir| to change the
@@ -6453,7 +6453,7 @@ downloaded the web page from the Internet and printed it to the
 screen.  In a message resembling this:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
                    THE PREEVENTUALIST'S LOSING AND FINDING REGISTRY
           (a free service benefiting the ENLIGHTENED who have been LIGHTENED)
@@ -6534,7 +6534,7 @@ screen.  In a message resembling this:
   rowing machine last year and i LOVE IT!!
                                                    - perry
 
-\end{rubycode}
+\end{consolecode}
 
 
 I think the Youth Study Clan is doing a great job with this service.
@@ -6550,7 +6550,7 @@ Going back to the list of instructions from the Preeventualist's
 Losing and Finding Registry.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  USING THE L&F SERVER
  ====================
@@ -6585,7 +6585,7 @@ Losing and Finding Registry.
 
    http://preeventualist.org/lost/searchlost?q=cup
 
-\end{rubycode}
+\end{consolecode}
 
 
 \newpage
@@ -6765,7 +6765,7 @@ Punch the \rubyinline|yield| button three times quick
 and the block gets to live its life three times.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> a = ['first, birth.', 'then, a life of flickering images.',
            'and, finally, the end.']
@@ -6775,7 +6775,7 @@ and the block gets to live its life three times.
  #   then, a life of flickering images.
  #   and, finally, the end.
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|shift| method pulls the first item off
@@ -6907,14 +6907,14 @@ These stragglers can you use your module just like I used
 \rubyinline|OpenURI| earlier.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> require 'preeventualist'
  irb> puts PreEventualist.search( 'truck' )
  irb> puts PreEventualist.addfound( 'Why', 'Ruby skills', 'Wixl park',
         "I can give you Ruby skills!\nCome visit poignantguide.net!" )
 
-\end{rubycode}
+\end{consolecode}
 
 
 
@@ -7508,7 +7508,7 @@ just like \rubyinline|eval| does, but they duck into
 classes and objects and run the code there.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # The instance_eval method runs code as if it were run inside an
  # object's instance method.
@@ -7528,7 +7528,7 @@ classes and objects and run the code there.
  irb> drgn.name
    => "Tobias"
 
-\end{rubycode}
+\end{consolecode}
 
 
 As you can see above, the \rubyinline|instance_eval|
@@ -7692,18 +7692,18 @@ To start off, open up \rubyinline|irb| and load the
 libraries we've created above.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> require 'dwemthy'
  irb> require 'rabbit'
 
-\end{rubycode}
+\end{consolecode}
 
 
 Now, unroll yourself.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> r = Rabbit.new
  irb> r.life
@@ -7711,7 +7711,7 @@ Now, unroll yourself.
  irb> r.strength
    => 2
 
-\end{rubycode}
+\end{consolecode}
 
 
 Good, good.
@@ -7747,18 +7747,18 @@ To get the fight started, make sure you've created one of you and one
 of the \rubyinline|ScubaArgentine|.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> r = Rabbit.new
  irb> s = ScubaArgentine.new
 
-\end{rubycode}
+\end{consolecode}
 
 
 Now use the little boomerang!
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> r ^ s
  [You hit with 2 points of damage!]
@@ -7766,7 +7766,7 @@ Now use the little boomerang!
  [Your enemy hit with 28 points of damage!]
  [Rabbit has died.]
 
-\end{rubycode}
+\end{consolecode}
 
 
 For crying out loud!!  Our sample rabbit died!!  Grim prospects.  I
@@ -7774,7 +7774,7 @@ can't ask you to return to the rabbit kingdom, though. Just pretend
 like you didn't die and make a whole new rabbit.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> r = Rabbit.new
 
@@ -7790,7 +7790,7 @@ like you didn't die and make a whole new rabbit.
  # you have three bombs!
  irb> r * s
 
-\end{rubycode}
+\end{consolecode}
 
 
 Pretty neat looking, wouldn't you say?  The code in
@@ -7800,7 +7800,7 @@ you to change the behavior of math operators.  After all, {\bf math
   operators are just methods!}
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # the boomerang is normally an XOR operator.
  irb> 1.^( 1 )
@@ -7818,7 +7818,7 @@ you to change the behavior of math operators.  After all, {\bf math
  irb> 10.*( 3 )
    => 30
 
-\end{rubycode}
+\end{consolecode}
 
 
 Where it makes sense, you may choose to use math operators on some of
@@ -7828,7 +7828,7 @@ you can see in the list of instance methods when you type:
 \rubyinline|ri Array|.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # the plus operator combines two arrays into a single array
  irb> ["D", "W", "E"] + ["M", "T", "H", "Y"]
@@ -7842,7 +7842,7 @@ you can see in the list of instance methods when you type:
  irb> ["D", "W"] * 3
    => ["D", "W", "D", "W", "D", "W"]
 
-\end{rubycode}
+\end{consolecode}
 
 
 You may be wondering: what does this mean for math, though?  What if I
@@ -7856,7 +7856,7 @@ the operators are identical to other readable methods.  You can then
 choose to use the operator or the method. Whichever is clearer to you.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # divide with an operator method ...
  irb> 10 / 3
@@ -7866,7 +7866,7 @@ choose to use the operator or the method. Whichever is clearer to you.
  irb> 10.div 3
    => 3
 
-\end{rubycode}
+\end{consolecode}
 
 
 And that's how the Rabbit's sword divides.
@@ -7962,11 +7962,11 @@ through your shoulder.
 Start here:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> r % dwary
 
-\end{rubycode}
+\end{consolecode}
 
 
 Oh, and none of this ``I'm too young to die'' business.  I'm sick of
@@ -8040,14 +8040,14 @@ class, so it trickles down through the pedigree to every wee child
 object just born.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> o = Object.new
    => #<Object:0x81d60c0>
  irb> o.inspect
    => "#<Object:0x81d60c0>"
 
-\end{rubycode}
+\end{consolecode}
 
 
 Have you noticed this?  Whenever we create an object in
@@ -8058,7 +8058,7 @@ little name badge for the object.  The
 The badge is just a string.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> class Rabbit
  irb>   attr_accessor :slogan
@@ -8074,7 +8074,7 @@ The badge is just a string.
  irb> FakeRabbit.new "Thusly and thusly and thusly..."
    => #<FakeRabbit says 'Thusly and thusly and thusly...'>
 
-\end{rubycode}
+\end{consolecode}
 
 
 The thing is: \rubyinline|irb| is talking back.  Every
@@ -8151,7 +8151,7 @@ it, you and your dazzling poetry.
 But what if you call \rubyinline|simon|?
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> NameCaller.new.simon( 'Hello?', 'Hello? Simon?' )
  You're calling `simon' and you say:
@@ -8159,7 +8159,7 @@ But what if you call \rubyinline|simon|?
    Hello? Simon?
  But no one is there yet.
 
-\end{rubycode}
+\end{consolecode}
 
 
 Yes, \rubyinline|method_missing| is like an answering
@@ -8302,7 +8302,7 @@ If you can muster up a bit of imagination, you can see a {\bf percent
 let me show you frogs that camp out inside strings.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # The %s format is for placing full strings.
  irb> "Seats are taken by %s and %s." % ['a frog', 'a frog with teeth']
@@ -8321,7 +8321,7 @@ let me show you frogs that camp out inside strings.
  irb> stats % frogs
    => "Frogs have filled 44 seats and paid 162.30 blue crystals."
 
-\end{rubycode}
+\end{consolecode}
 
 
 What you are seeing above uses the \rubyinline|%|
@@ -8332,7 +8332,7 @@ order) and placed in their saved seats.  It's the open of the business
 day and the frogs have done their job.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # See, here's the String#% method called like other methods.
  irb> "Please move over, %s.".%( 'toothless frog' )
@@ -8343,7 +8343,7 @@ day and the frogs have done their job.
  irb> "Here is your 1098 statement for the year, %s." % ['teeth frog']
    => "Here is your 1098 statement for the year, teeth frog."
 
-\end{rubycode}
+\end{consolecode}
 
 
 This is also available as the
@@ -8353,12 +8353,12 @@ language, there is a \rubyinline|sprintf| method which
 operates just like this.)
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> format "Frogs are piled %d deep and travel at %d mph.", [5, 56]
    => "Frogs are piled 5 deep and travel at 56 mph."
 
-\end{rubycode}
+\end{consolecode}
 
 
 For the most part, you'll only need \rubyinline|%s|
@@ -8381,13 +8381,13 @@ identify specific items by placing a number
 the percent sign.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> "This bus has %1$d more stops before %2$d o'clock.  That's %1$d more stops."
       % [16, 8]
    => "This bus has 16 more stops before 8 o'clock.  That's 16 more stops."
 
-\end{rubycode}
+\end{consolecode}
 
 
 The second tip I have for you is that you can allot a certain number
@@ -8397,7 +8397,7 @@ the width is a negative number, the item will be forced to left and
 the padding will come after it.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # Give one item 30 characters of width
  irb> "In the back of the bus: %30s." % ['frogs']
@@ -8407,7 +8407,7 @@ the padding will come after it.
  irb> "At the front of the bus: %-30s." % ['frogs']
    => "At the front of the bus: frogs                         ."
 
-\end{rubycode}
+\end{consolecode}
 
 
 Fox Small kept looking up at the bus driver.  Remember, he wouldn't
@@ -8469,13 +8469,13 @@ that service road, Smotchkkiss, I have one more frog for you, perched
 on a long lilypad that stretches out to hold anything at all.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> cat = "Blix"
  irb> puts "Does #{ cat } see what's up?  Is #{ cat } aware??"
    => "Does Blix see what's up?  Is Blix aware??"
 
-\end{rubycode}
+\end{consolecode}
 
 
 The little frogs from earlier (\rubyinline|%s| or
@@ -8499,13 +8499,13 @@ is lifted out and the result of the code is placed there in the
 string.  This lilypad swap is called {\em string interpolation}.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> fellows = ['Blix', 'Fox Tall', 'Fox Small']
  irb> puts "Let us follow #{ fellows.join ' and ' } on their journey."
    => "Let us follow Blix and Fox Tall and Fox Small on their journey."
 
-\end{rubycode}
+\end{consolecode}
 
 
 The lilypad is very durable and can hold any kind of code inside.
@@ -8515,7 +8515,7 @@ can do anything you like inside.  Call object methods, conditional
 statements, even define classes.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> blix_went = :north
  irb> puts "Blix didn't speak, he ducked off to the #{ blix_went } through #{
@@ -8529,7 +8529,7 @@ statements, even define classes.
  => "Blix didn't speak, he ducked off to the north through a poorly laid avenue
      behind the paint store.  But before we follow them..."
 
-\end{rubycode}
+\end{consolecode}
 
 
 The foxes followed Blixy off behind the paint store and down the
@@ -8631,14 +8631,14 @@ They may not be {\em loaded} with meaning, it may not be oozing out
 through the cracks, but I'm sure there's a sliver of meaning.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> $:
    => ["/usr/lib/ruby/site_ruby/1.8", "/usr/lib/ruby/site_ruby/1.8/i686-linux",
        "/usr/lib/ruby/site_ruby", "/usr/lib/ruby/1.8",
        "/usr/lib/ruby/1.8/i686-linux", "."]
 
-\end{rubycode}
+\end{consolecode}
 
 
 Variables which start with the American cash sign are global
@@ -8659,7 +8659,7 @@ lookout list behind the eyes.
 Here's a few more special global variables:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> $"      # The $" variable contains all files which have been loaded with `require'
    => ["irb.rb", "e2mmap.rb", "irb/init.rb", ... "rbconfig.rb"]
@@ -8695,7 +8695,7 @@ Here's a few more special global variables:
    => ["(irb):25:in `irb_binding'", "/usr/lib/ruby/1.8/irb/workspace.rb:52:in
        `irb_binding'", "/usr/lib/ruby/1.8/irb/workspace.rb:52"]
 
-\end{rubycode}
+\end{consolecode}
 
 
 ``I don't remember you.''  Blix looked at the gorilla with great
@@ -8764,7 +8764,7 @@ his head slithered to the floor behind the counter.
 Here are a few more global variables you might care to use:
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> $/      # The $/ is the line separator, it is normally set to \n, which
               # represents _Enter_
@@ -8815,7 +8815,7 @@ Here are a few more global variables you might care to use:
  irb> "candle # soup # mackarel".split ' # '
    => ['candle', 'soup', 'mackarel']
 
-\end{rubycode}
+\end{consolecode}
 
 
 Outside the {\em Gorilla Mint}, Blix scolded the foxes.  ``We could
@@ -8879,12 +8879,12 @@ together. The opening bat wears a hat on which is written
 of words.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> bats = %w{The Winged Scroll Carriers}
    => ['The', 'Winged', 'Scroll', 'Carriers']
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|%w| bats and their scroll, when fed
@@ -8898,14 +8898,14 @@ Other bats, other hats.  For instance, the
 \rubyinline|%x| hat runs an external program.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> %w{ruby --help}
    => ["ruby", "--help"]
  irb> %x{ruby --help}
    => "Usage: ruby [switches] [--] [programfile] [arguments] ..."
 
-\end{rubycode}
+\end{consolecode}
 
 
 My favorite is the \rubyinline|%Q| hat, which can also
@@ -8951,26 +8951,26 @@ Making duplicates of Ruby objects is no more than a berry's worth of
 code.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> tree = [:berry, :berry, :berry]
    => [:berry, :berry, :berry]
  irb> treechild = tree.clone
    => [:berry, :berry, :berry]
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|clone| method makes an exact copy of a
 Ruby object.  How does this differ from regular assignment?
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> tree_charles_william_iii = tree
    => [:berry, :berry, :berry]
 
-\end{rubycode}
+\end{consolecode}
 
 
 Assigning object to variables only creates more nicknames.  The above
@@ -8983,14 +8983,14 @@ However, a clone is a copy of an object.  You can modify it without
 affecting the original.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> treechild << 'flower'
    => [:berry, :berry, :berry, 'flower']
  irb> tree
    => [:berry, :berry, :berry]
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|clone| method doesn't make copies of
@@ -9010,7 +9010,7 @@ metaclass of an object, whereas \rubyinline|dup| does
 not.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> o = Object.new
  irb> class << o
@@ -9023,7 +9023,7 @@ not.
  # NoMethodError: undefined method `nevermore' for #<Object:0xb7d4a484>
  #         from (irb):7
 
-\end{rubycode}
+\end{consolecode}
 
 
 
@@ -9138,14 +9138,14 @@ the smoke and driving it to the Weinerschnitzel to get mustard pretzel
 dogs is easy.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> "good_password".match( /^\w{8,15}$/ )
    => #<MatchData:0xb7d54218>
  irb> "this_bad_password_too_long".match( /^\w{8,15}$/ )
    => nil
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|String#match| method is the {\em
@@ -9293,14 +9293,14 @@ American phone numbers (including an area code) can be matched using
 the digit character class and the precise quantifiers.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> "Call 909-375-4434" =~ /\d{3}-\d{3}-\d{4}/
    => 5
  irb> "The number is (909) 375-4434" =~ /[(]\d{3}[)]\s*\d{3}-\d{4}/
    => 14
 
-\end{rubycode}
+\end{consolecode}
 
 
 This time, instead of using \rubyinline|match| to
@@ -9324,7 +9324,7 @@ by converting the \rubyinline|MatchData| object to a
 string.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  # Using =~ and $& together.
  irb> "The number is (909) 375-4434" =~ /[(]\d{3}[)]\s*\d{3}-\d{4}/
@@ -9338,7 +9338,7 @@ string.
  irb> phone.to_s
    => "(909) 375-4434"
 
-\end{rubycode}
+\end{consolecode}
 
 
 Most Rubyists prefer the second approach, as it uses an object within
@@ -9354,7 +9354,7 @@ Other than matching, another common use of regular expression is to do
 with strings or regexps.
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  irb> song = "I swiped your cat / And I stole your cathodes"
  irb> song.gsub 'cat', 'banjo'
@@ -9363,7 +9363,7 @@ with strings or regexps.
  irb> song.gsub /\bcat\b/, 'banjo'
    => "I swiped your banjo / And I stole your cathodes"
 
-\end{rubycode}
+\end{consolecode}
 
 
 The \rubyinline|gsub| method is named for ``global
