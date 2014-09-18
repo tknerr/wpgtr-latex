@@ -1,0 +1,23 @@
+
+
+Minted Issues:
+
+  * various overflows, e.g. on pages 28, 50, 53, 59, 67, 104, 106
+  * ranges not correctly highlighted yet, see https://bitbucket.org/birkenfeld/pygments-main/issue/1031/ruby-ranges-not-highlighted-correctly
+
+Improvements:
+
+  * remove blank pages before toc?
+  * add boxes / frames around rubycode environments?
+  * keep syntax highlighting in tables on p108?
+
+Changes:
+
+  * replaced listings with minted package for pygmentized code highlighting
+    - using minted 2.0-alpha-3 and pygments 2.0pre@5b117d51abe0
+  	- don't highlight irb sessions and console output as Ruby code
+  	- use consistent fontsize for all code examples
+  	- worked around minor highlighting bugs
+  * corrected few occurrences of inconsistently indented code examples
+  * cleaned up chapter breaks (ensure blank pages before chapter breaks) 
+  * adapted papersize to 8.125 x 10.250 (and fontsize to 12pt)
