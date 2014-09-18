@@ -39,6 +39,9 @@
 \newmintinline{ruby}{fontsize=\normalsize}
 \newmintinline{console}{fontsize=\normalsize}
 
+% pseudo-mint for plain bold black formatting
+\newcommand*{\plaininline}{\fontfamily{fvm}\fontseries{b}\small\selectfont}
+
 \usepackage{manfnt}
 
 \renewcommand{\appendixname}{Expansion Pak No.}
@@ -2179,7 +2182,7 @@ The words which are placed before the arrow are called {\bf keys}.
 The words after the arrows, the definitions, are often just called
 {\bf values}.
 
-Notice the double quotes around \rubyinline|Ny and Jerry's Dry Cleaning (with Donuts)|.  
+Notice the double quotes around \rubyinline|"Ny and Jerry's Dry Cleaning (with Donuts)"|.
 Since a single quote is being used an apostrophe, we can't use single
 quotes around the string.  (Although, you can use single quotes if you
 put a backslash before the apostrophe such as:
@@ -8374,8 +8377,8 @@ you a few quick pointers.
 Let's say you have the array but you want the items to appear in {\bf
   a different order} in the string.  In such a situation, you can
 identify specific items by placing a number
-(\rubyinline|1$| for the first item,
-\rubyinline|2$| for the second, and so on) right after
+({\plaininline 1\$} for the first item,
+{\plaininline 2\$} for the second, and so on) right after
 the percent sign.
 
 
