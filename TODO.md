@@ -15,9 +15,9 @@ Changes:
 
   * replaced listings with minted package for pygmentized code highlighting
     - using minted 2.0-alpha-3 and pygments 2.0pre@5b117d51abe0
-  	- don't highlight irb sessions and console output as Ruby code
-  	- use consistent fontsize for all code examples
-  	- worked around minor highlighting bugs
+    - highlight irb sessions and console output separately
+    - use consistent fontsize for all code examples
+    - worked around minor highlighting bugs
   * corrected few occurrences of inconsistently indented code examples
   * cleaned up chapter breaks (ensure blank pages before chapter breaks) 
   * adapted papersize to 8.125 x 10.250 (and fontsize to 12pt)
