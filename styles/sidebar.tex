@@ -11,7 +11,7 @@
 % http://www.tex.ac.uk/cgi-bin/texfaq2html?label=chngmargonfly
 \newenvironment{changemargin}[2]{%
 	\begin{list}{}{%
-			\setlength{\topsep}{0pt}%
+			\setlength{\topsep}{6pt}%
 			\setlength{\leftmargin}{#1}%
 			\setlength{\rightmargin}{#2}%
 			\setlength{\listparindent}{\parindent}%
@@ -23,7 +23,7 @@
 \newenvironment{sidebar}[2]
 {
 	\def\bottomSpace{#2}
-	\wrapfigure{O}[24pt]{0.4\textwidth}
+	\wrapfigure{O}[26pt]{0.4\textwidth}
 	\vspace{0pt}
 	\begin{mdframed}[leftmargin=0cm,rightmargin=0cm,innerleftmargin=0cm,innerrightmargin=0cm,innertopmargin=0cm,innerbottommargin=0cm,roundcorner=0pt,backgroundcolor=sidebarBg,skipabove=0pt,skipbelow=0pt,topline=false,leftline=false,bottomline=false,rightline=false]
 	\colorbox{sidebarGray}{\hspace{0.38\linewidth}\textcolor{white}{Sidebar!}\hspace{0.38\linewidth} \vrule height12pt depth4pt width-4pt}
