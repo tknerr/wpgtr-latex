@@ -13,6 +13,8 @@ Minted Issues:
 
 Improvements:
 
+  * einrückung für quotes und minted codeblocks via margin definieren
+    - see http://tex.stackexchange.com/a/2430
   * remove blank pages before toc?
   * add boxes / frames around rubycode environments?
   * keep syntax highlighting in tables on p206?
