@@ -13,13 +13,13 @@ Minted Issues:
 
 Improvements:
 
-  * remove blank pages before toc?
-  * add boxes / frames around rubycode environments?
+  * check \consoleinline in later chapters - many of them are \rubyinline?
   * keep syntax highlighting in tables on p206?
   * .mobi version
 
 Changes:
 
+  * added missing quils drawings at the end of chapter 6
   * replaced listings with minted package for pygmentized code highlighting
     - using minted 2.0-alpha-3 and pygments 2.0pre@5b117d51abe0
     - highlight irb sessions and console output separately

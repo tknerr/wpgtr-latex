@@ -1,0 +1,51 @@
+\usepackage{wrapfig}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{quoting}
+
+\definecolor{sidebarBg}{HTML}{EDEFE4}
+\definecolor{sidebarDivider}{HTML}{CCCCCC}
+\definecolor{sidebarGray}{HTML}{7A8A9A}
+\definecolor{sidebarDarkGray}{HTML}{555555}
+
+% changing margins on-the-fly, see here:
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=chngmargonfly
+\newenvironment{changemargin}[2]{%
+	\begin{list}{}{%
+			\setlength{\topsep}{6pt}%
+			\setlength{\leftmargin}{#1}%
+			\setlength{\rightmargin}{#2}%
+			\setlength{\listparindent}{\parindent}%
+			\setlength{\itemindent}{\parindent}%
+			\setlength{\parsep}{\parskip}%
+		}%
+		\item[]}{\end{list}}
+
+\newenvironment{sidebar}[2]
+{
+	\def\bottomSpace{#2}
+	\wrapfigure{O}[26pt]{0.4\textwidth}
+	\vspace{-4pt}
+	\begin{mdframed}[leftmargin=0cm,rightmargin=0cm,innerleftmargin=0cm,innerrightmargin=0cm,innertopmargin=0cm,innerbottommargin=0cm,roundcorner=0pt,backgroundcolor=sidebarBg,skipabove=0pt,skipbelow=0pt,topline=false,leftline=false,bottomline=false,rightline=false]
+	\colorbox{sidebarGray}{\hspace{0.38\linewidth}\textcolor{white}{Sidebar!}\hspace{0.38\linewidth} \vrule height12pt depth4pt width-4pt}
+	\begin{changemargin}{0.3cm}{0.3cm}
+	\raggedright{\textcolor{sidebarDarkGray}{\textbf{#1}}}
+	\end{changemargin}
+	\raisebox{8px}{\noindent\textcolor{sidebarDivider}{\rule{\textwidth}{2px}}}
+	\begin{minipage}{\textwidth}\footnotesize
+	\begin{changemargin}{0.3cm}{0.3cm}
+}
+{
+	\vspace{3px}
+	\end{changemargin}
+	\end{minipage}
+	\colorbox{sidebarGray}{\hspace{0.38\linewidth}\textcolor{white}{Sidebar!}\hspace{0.38\linewidth} \vrule height12pt depth4pt width-4pt}
+	\end{mdframed}
+	\vspace{-\bottomSpace pt}
+	\endwrapfigure
+}
+	
+\newcommand{\sidebarImg}[1]{
+	\hfill
+	\includegraphics[width=0.8\textwidth]{#1}
+	\hspace*{\fill}
+}
