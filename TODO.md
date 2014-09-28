@@ -2,6 +2,7 @@
 
 ToDo:
  
+  * quils pics are missing at the end of chapter 6!
   * integrate sidebars!
   * changelog entry in README and prologue
   * quality check - pdf-diff text contents vs. original
@@ -13,10 +14,7 @@ Minted Issues:
 
 Improvements:
 
-  * einrückung für quotes und minted codeblocks via margin definieren
-    - see http://tex.stackexchange.com/a/2430
-  * remove blank pages before toc?
-  * add boxes / frames around rubycode environments?
+  * check \consoleinline in later chapters - many of them are \rubyinline?
   * keep syntax highlighting in tables on p206?
   * .mobi version
 
