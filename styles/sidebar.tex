@@ -1,11 +1,15 @@
 \usepackage{wrapfig}
 \usepackage[framemethod=tikz]{mdframed}
 \usepackage{quoting}
+\usepackage{calc}
 
 \definecolor{sidebarBg}{HTML}{EDEFE4}
 \definecolor{sidebarDivider}{HTML}{CCCCCC}
 \definecolor{sidebarGray}{HTML}{7A8A9A}
 \definecolor{sidebarDarkGray}{HTML}{555555}
+
+\newlength{\padlength}
+
 
 % changing margins on-the-fly, see here:
 % http://www.tex.ac.uk/cgi-bin/texfaq2html?label=chngmargonfly
@@ -20,15 +24,16 @@
 		}%
 		\item[]}{\end{list}}
 
-\newenvironment{sidebar}[2]
+\newenvironment{sidebar}[3][0.4]
 {
-	\def\bottomSpace{#2}
-	\wrapfigure{O}[26pt]{0.4\textwidth}
+	\def\bottomSpace{#3}
+	\wrapfigure{O}[26pt]{#1\textwidth}
 	\vspace{-4pt}
 	\begin{mdframed}[leftmargin=0cm,rightmargin=0cm,innerleftmargin=0cm,innerrightmargin=0cm,innertopmargin=0cm,innerbottommargin=0cm,roundcorner=0pt,backgroundcolor=sidebarBg,skipabove=0pt,skipbelow=0pt,topline=false,leftline=false,bottomline=false,rightline=false]
-	\colorbox{sidebarGray}{\hspace{0.38\linewidth}\textcolor{white}{Sidebar!}\hspace{0.38\linewidth} \vrule height12pt depth4pt width-4pt}
+	\setlength{\padlength}{(\linewidth - \widthof{Sidebar!} - 0.3pt) / 2}
+	\colorbox{sidebarGray}{\hspace{\padlength}\textcolor{white}{Sidebar!}\hspace{\padlength} \vrule height12pt depth4pt width-4pt}
 	\begin{changemargin}{0.3cm}{0.3cm}
-	\raggedright{\textcolor{sidebarDarkGray}{\textbf{#1}}}
+	\raggedright{\textcolor{sidebarDarkGray}{\textbf{#2}}}
 	\end{changemargin}
 	\raisebox{8px}{\noindent\textcolor{sidebarDivider}{\rule{\textwidth}{2px}}}
 	\begin{minipage}{\textwidth}\footnotesize
@@ -38,7 +43,7 @@
 	\vspace{3px}
 	\end{changemargin}
 	\end{minipage}
-	\colorbox{sidebarGray}{\hspace{0.38\linewidth}\textcolor{white}{Sidebar!}\hspace{0.38\linewidth} \vrule height12pt depth4pt width-4pt}
+	\colorbox{sidebarGray}{\hspace{\padlength}\textcolor{white}{Sidebar!}\hspace{\padlength} \vrule height12pt depth4pt width-4pt}
 	\end{mdframed}
 	\vspace{-\bottomSpace pt}
 	\endwrapfigure
