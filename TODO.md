@@ -2,13 +2,11 @@
 
 ToDo:
  
-  * integrate sidebars!
   * changelog entry in README and prologue
   * quality check - pdf-diff text contents vs. original
 
 Minted Issues:
 
-  * various overflows, e.g. on pages 30, 51(!), 65 (!!!), 104, 136 (!)
   * ranges not correctly highlighted yet, see https://bitbucket.org/birkenfeld/pygments-main/issue/1031/ruby-ranges-not-highlighted-correctly
 
 Improvements:
@@ -19,6 +17,12 @@ Improvements:
 
 Changes:
 
+  * integrated sidebars based on Alex Niesnevich's work
+    - sidebars are now at the outer edges of the pages
+    - using blue background color like in the original
+    - relayouted them so they always start on top of the page
+    - rearranged them so the (cont'd) sidebars follow right upon each other
+    - made size of sidebar adjustable (e.g. for the tambourine sidebar)
   * added missing quils drawings at the end of chapter 6
   * replaced listings with minted package for pygmentized code highlighting
     - using minted 2.0-alpha-3 and pygments 2.0pre@5b117d51abe0
