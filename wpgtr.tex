@@ -2418,7 +2418,7 @@ Ruby with a string that contains everything you typed.  The
 \rubyinline|reverse| method is then used on the string
 that \rubyinline|gets| is giving back.  The
 \rubyinline|reverse| method is part of the
-\rubyinline|String| class.  Which means that {\bf
+{\plaininline String} class.  Which means that {\bf
   anything which is a string has the
   \rubyinline|reverse| method available}.  More on
 classes in the next chapter, for now just know that {\bf a lot of
@@ -2517,8 +2517,7 @@ with the string \rubyinline|'chucky go-go'|.\end{quote}
 
 
 
-I went ahead and saved the Hash of code words to a file called {\bf
-  wordlist.rb}.
+I went ahead and saved the Hash of code words to a file called {\bf\plaininline wordlist.rb}.
 
 
 \begin{rubycode}
@@ -2547,7 +2546,7 @@ Script starts by pulling in our word list.  Like
 \rubyinline|require| method is a kernel method, you
 can use it anywhere.  I give it the string
 \rubyinline|'wordlist'| and it will look for a file
-named {\bf wordlist.rb}.
+named {\bf\plaininline wordlist.rb}.
 
 After that, there are two sections.  I am marking these sections with
 comments, the lines that start with {\bf pound} symbols.  Comments are
@@ -2580,19 +2579,19 @@ available for Arrays, Hashes, even Strings.  Here, our
 \rubyinline|code_words| dictionary is kept in a Hash.
 This \rubyinline|each| method will hurry through {\bf
   all the pairs of the Hash}, one dangerous word matched with its code
-word, handing each pair to the \rubyinline|gsub!|
+word, handing each pair to the {\plaininline gsub!}
 method for the actual replacement.
 
-In Ruby, \rubyinline|gsub| is short for {\em global
+In Ruby, {\plaininline gsub} is short for {\em global
   substitution}.  The method is used to search and replace. Here, we
 want to find all the occurences of a dangerous word and replace with
-its safe code word.  With \rubyinline|gsub|, you
+its safe code word.  With {\plaininline gsub}, you
 provide the {\bf word to find as the first argument}, then the {\bf
   word to put in its place as the second argument}.
 
 Why aren't we hanging on to the answer from
-\rubyinline|gsub|?  Doesn't
-\rubyinline|gsub| give us an answer back that we
+{\plaininline gsub}?  Doesn't
+{\plaininline gsub} give us an answer back that we
 should keep?  You'd think the line would read:
 
 
@@ -2603,22 +2602,22 @@ should keep?  You'd think the line would read:
 \end{rubycode}
 
 
-Yes, with \rubyinline|gsub| we'd need to hang on to
+Yes, with {\plaininline gsub} we'd need to hang on to
 its answer.  We're using a variation of
-\rubyinline|gsub| that is totally hyper.  Notice the
-{\bf exclamation mark} on the \rubyinline|gsub!| used
+{\plaininline gsub} that is totally hyper.  Notice the
+{\bf exclamation mark} on the {\plaininline gsub!} used
 inside the \rubyinline|each| block.  The exclamation
-mark is a sign that \rubyinline|gsub!| is a bit of a
-zealot.  See, \rubyinline|gsub!| will go ahead and
+mark is a sign that {\plaininline gsub!} is a bit of a
+zealot.  See, {\plaininline gsub!} will go ahead and
 {\bf replace the words in \rubyinline|idea| directly}.
 When it's done \rubyinline|idea| will contain the
 newly altered string and you won't be able to find the old string.
 
-Call \rubyinline|gsub!| a {\bf destructive method}.
+Call {\plaininline gsub!} a {\bf destructive method}.
 It makes its changes to the value directly.  Whereas
-\rubyinline|gsub| will leave the value intact,
+{\plaininline gsub} will leave the value intact,
 answering back with a new string which contains the alterations. (Why
-must \rubyinline|gsub!| scream when he descends upon
+must {\plaininline gsub!} scream when he descends upon
 his prey?  Merciless assailant!)
 
 
@@ -2780,8 +2779,8 @@ wildcard.  We're basically saying, ``Match anything that starts with
 the directory and comes back with a list of all matching files.
 
 That {\bf list of files} will come in the form of
-\rubyinline|Array| the Caterpillar, with a
-\rubyinline|String| for each file.  If you are curious
+{\plaininline Array} the Caterpillar, with a
+{\plaininline String} for each file.  If you are curious
 and want to play with with \rubyinline|Dir::[]|, try
 this:
 
@@ -3522,14 +3521,14 @@ So, the question is: after the block's over, will he have rescued
 Hannah?
 
 
-\begin{rubycode}
+\begin{consolecode}
 
  Dr. Cham sedated his niece Hannah.
  Dr. Cham sprinkled his niece Hannah.
  Dr. Cham electrocuted his niece Hannah.
  Yes, Dr. Cham electrocuted his niece Hannah.
 
-\end{rubycode}
+\end{consolecode}
 
 
 Blocks are allowed to see variables in the vicinity.  The block
@@ -3556,8 +3555,7 @@ then that variable vanishes at the end of the block.  The block's {\bf
 \end{rubycode}
 
 Pulls an error: 
-\rubyinline|undefined local variable or method `verb'|.  
-Poof.
+\consoleinline|undefined local variable or method `verb'|. Poof.
 
 It must be something difficult, even for a great scientist, to carry
 away the corpse of a young girl whose dress is still starched and
@@ -3823,7 +3821,7 @@ array, since they are later iterated over using the
 
 Both the wish maker and the mind reader refer to a class named
 \rubyinline|Endertromb|.  This class is stored in a
-file \rubyinline|endertromb.rb|, which is loaded with
+file {\bf\plaininline endertromb.rb}, which is loaded with
 the code: \rubyinline|require 'endertromb'|. Often
 you'll use other classes to accomplish part of your task.  Most of the
 latter half of this book will explore the wide variety of helpful
@@ -3844,7 +3842,6 @@ certain it was deserted.
 For a while he knocked.  Which paid off.
 
 	\includegraphics[width=1.0\textwidth]{cache/38.jpg}
-
 He watched the baby whale rise like a determined balloon.  He
 marvelled at his first alien introduction and felt some concern that
 it had passed so quickly.  Well, he would wait inside.
@@ -4019,7 +4016,7 @@ into Ruby at any time.
 
 He scanned the list for anything unfamiliar.  Any classes which didn't
 come with Ruby. \rubyinline|Marshal|,
-\rubyinline|String|, \rubyinline|Dir|,
+{\plaininline String}, \rubyinline|Dir|,
 \rubyinline|LoadError|,
 \rubyinline|Float|.  Each of those came with Ruby.
 
@@ -4406,19 +4403,19 @@ misunderstanding, right?
 When Ruby reads you these Miranda rights, listen hardest to the
 beginning.  The first line is often all you need.  In this first line
 is contained the essential message.  And in the above, the first line
-is telling us that there is no \rubyinline|include?|
+is telling us that there is no {\plaininline include?}
 method for the number 1. Remember, when we were talking about the
 \rubyinline|reverse| method in the last chapter?  Back
 then, I said, ``{\bf a lot of methods are only available with certain
   types of values}.''  Both \rubyinline|reverse| and
-\rubyinline|include?| are methods which work with
+{\plaininline include?} are methods which work with
 strings but are meaningless and unavailable for numbers.
 
 To be clear: the method tries to use to the number.  The method will
 start with \rubyinline|sentence| set to 1. Then, it
 hits the second line: 
 \rubyinline|while sentence.include? '('|.  
-Numbers have no \rubyinline|include?| method.  Great,
+Numbers have no {\plaininline include?} method.  Great,
 the backtrace has shown us where the problem is.  I didn't expect
 anyone to pass in a number, so I'm using methods that don't work with
 numbers.
@@ -4467,26 +4464,26 @@ something more sensible.
 \end{consolecode}
 
 
-The \rubyinline|respond_to?| method is really nice and
+The {\plaininline respond\_to?} method is really nice and
 I plead that you never forget it's there.  The
-\rubyinline|respond_to?| checks any object to be sure
+{\plaininline respond\_to?} checks any object to be sure
 that it has a certain method.  It then gives back a
 \rubyinline|true| or
 \rubyinline|false|.  In the above case, the incoming
 \rubyinline|sentence| object is checked for an
-\rubyinline|include?| method.  If no
-\rubyinline|include?| method is found, then we raise
+{\plaininline include?} method.  If no
+{\plaininline include?} method is found, then we raise
 the error.
 
 You might be wondering why I used a symbol with
-\rubyinline|respond_to?|.  I used a symbol
+{\plaininline respond\_to?}.  I used a symbol
 \rubyinline|:include?| instead of a string
 \rubyinline|'include?'|.  Actually, either will work
-with \rubyinline|respond_to?|.
+with {\plaininline respond\_to?}.
 
 Usually symbols are used when you are passing around the name of a
 method or any other Ruby construct. It's more efficient, but it also
-catches the eye.  The \rubyinline|respond_to?| asks
+catches the eye.  The {\plaininline respond\_to?} asks
 Ruby to look inside itself and see if a method is available.  We're
 talking to Ruby, so the symbol helps denote that.  It's not a big
 deal, Ruby just recognizes symbols quicker than strings.
@@ -4515,8 +4512,8 @@ How does this work?  How does the method change the string?  Shouldn't
 it make a copy of the string before changing it?
 
 Yes, absolutely, it should!  {\bf It's bad manners to change strings
-  like that.}  We've used \rubyinline|gsub| and
-\rubyinline|gsub!| in the last chapter.  Do you
+  like that.}  We've used {\plaininline gsub} and
+{\plaininline gsub!} in the last chapter.  Do you
 remember which of those two methods is a {\bf destructive method},
 which changes strings directly?
 
@@ -4525,7 +4522,7 @@ Either we need to call this method
 all the other good folks out there that might use this method) or
 change the method to work on a copy of the string rather than the real
 thing.  Which is an easy change!  We just need to
-\rubyinline|dup| the string.
+{\plaininline dup} the string.
 
 
 \begin{rubycode}
@@ -4547,7 +4544,7 @@ thing.  Which is an easy change!  We just need to
 \end{rubycode}
 
 
-The \rubyinline|dup| method makes a copy of any
+The {\plaininline dup} method makes a copy of any
 object.  Look at that line we added again on its own:
 
 
@@ -4606,7 +4603,7 @@ And, yes, sometimes objects disappear.  {\bf If you can't get to an
   it and will get rid of it.}  Periodically, Ruby sends out its {\bf
   garbage collector} to set these objects free.  Every object is kept
 in your computer's memory until the garbage collector gets rid of it.
-Oh, and one more thing about \rubyinline|dup|.  Some
+Oh, and one more thing about {\plaininline dup}.  Some
 things can't be dup'd.  Numbers, for instance.  Symbols (which look
 like \rubyinline|:death|) are identical when spelled
 the same.  Like numbers.
@@ -4720,13 +4717,13 @@ In summary, here's what we've learned about writing methods:
   methods. If you absolutely can't use what they give you,
   \rubyinline|raise| an error.
 \item It's poor etiquette to change objects your method is given.  Use
-  \rubyinline|dup| to make a copy.  Or find a method
-  like \rubyinline|gsub| that automatically makes a
+  {\plaininline dup} to make a copy.  Or find a method
+  like {\plaininline gsub} that automatically makes a
   copy as it does its job.
 \item The square brackets can be used to lookup parts inside any
-  \rubyinline|Array|,
+  {\plaininline Array},
   \rubyinline|Hash| or
-  \rubyinline|String| objects, as these objects
+  {\plaininline String} objects, as these objects
   provide a \rubyinline|[]| method.  Also, since these
   objects provide a \rubyinline|[]=| method, the
   square brackets can be used in assignment (on the left-hand side of
@@ -4806,7 +4803,7 @@ tell, the prefix indicates the namecaller's relationship to Paij-ree.
 Now I've gone beyond just showing you sloppy code.  Here be a grave
 debauchery and a crime against nature.  A crime most languages won't
 allow you to commit.  We're changing the
-\rubyinline|String|, {\bf one of the core classes of
+{\plaininline String}, {\bf one of the core classes of
   Ruby}!
 
 ``I know this is a bit dangerous,'' I said, when I passed this one
@@ -4817,7 +4814,7 @@ he said.  ``Dogs and logs and swampy bogs (kul-ip), all must be
 tasted.''  And he took a swig of his Beagle Berry marsh drink.
 
 So what is it that I'm adding to the
-\rubyinline|String| class?  Two things: a class
+{\plaininline String} class?  Two things: a class
 variable and a method.  A normal {\bf instance method}.
 
 I like to look at the {\bf at} symbol as a character meaning {\bf
@@ -4919,7 +4916,7 @@ building a new Array which is based on the items in an existing Array.
 
 Doug has three cats for sale.  One is twelve cents, one is sixty-three
 cents, one is nine cents. Let's see how much each cat would cost if we
-added a 20% tip.
+added a 20\% tip.
 
 
 \begin{rubycode}
@@ -5157,14 +5154,14 @@ mailing software to accept any kind of address.
 
 Also, inheritance is great if you want to override certain behaviours
 in a class. For example, perhaps you want to make your own slight
-variation to the \rubyinline|Array| class. You want to
+variation to the {\plaininline Array} class. You want to
 enhance the \rubyinline|join| method.  But if you
 change \rubyinline|Array#join| directly, you will
 affect other classes in Ruby that use Arrays.
 
 So you start your own class called
 \rubyinline|ArrayMine|, which is based on The Original
-\rubyinline|Array|.
+{\plaininline Array}.
 
 
 \begin{rubycode}
@@ -5183,9 +5180,9 @@ So you start your own class called
 
 
 \rubyinline|ArrayMine| is now a custom
-\rubyinline|Array| class with its own
+{\plaininline Array} class with its own
 \rubyinline|join| method.
-\rubyinline|Array| is the {\bf superclass} of
+{\plaininline Array} is the {\bf superclass} of
 \rubyinline|ArrayMine|.  Every object has a
 \rubyinline|superclass| method where you can verify
 this relationship.
@@ -5200,7 +5197,7 @@ this relationship.
 
 
 Perfect.  We manage a hotel and we have an
-\rubyinline|Array| of our room sizes:
+{\plaininline Array} of our room sizes:
 \rubyinline|[3, 4, 6]|. Let's get it nicely printed
 for a brochure.
 
@@ -7189,7 +7186,7 @@ store files.  On your system or elsewhere on the Internet.
 When you're using \rubyinline|OpenURI| to get
 information from the web with the \rubyinline|open|
 and \rubyinline|read| methods, the page is given to
-you as a \rubyinline|String|.  You can also read the
+you as a {\plaininline String}.  You can also read the
 page one line at a time, if you're searching for something.  Or if the
 page is big and you want to conserve your computer's memory.
 
@@ -7407,7 +7404,7 @@ Let's neatly {\em encapsulate} the entire service into a single class.
 
 At some point with your code, you need to start shaping it into
 something neat.  Save the above module in a file called
-\rubyinline|preeventualist.rb|.
+{\bf\plaininline preeventualist.rb}.
 
 This module is a very simple library for using the Preeventualist's
 service.  This is exactly the way libraries are written.  You whip up
@@ -7816,7 +7813,7 @@ class contains the metaprogramming code.  You can write
 metaprogramming code which can be used {\em everywhere}, throughout
 Ruby, in \rubyinline|Creature| or
 \rubyinline|Dragon|, in
-\rubyinline|String| or in
+{\plaininline String} or in
 \rubyinline|Object|, anywhere. Our example here, since
 this is the most common form of meta-code, focuses on metaprogramming
 inside your own classes only.
@@ -7849,7 +7846,7 @@ be very clear.
 
 Now, with a lateral slice across the diaphragm, we expose the innards
 of \rubyinline|Creature|.  {\bf Save this code into a
-  file called \rubyinline|dwemthy.rb|.}
+  file called {\bf\plaininline dwemthy.rb}.}
 
 
 \begin{rubycode}
@@ -8135,7 +8132,7 @@ Dwemthy's Array.
 
 
 Tread carefully -- here is {\bf the other half of DWEMTHY'S ARRAY!!}
-{\bf Add these lines to \rubyinline|dwemthy.rb|.}
+{\bf Add these lines to {\bf\plaininline dwemthy.rb}.}
 
 
 \begin{rubycode}
@@ -8233,7 +8230,7 @@ fighting for now.
 You may certainly tinker with derivations on this rabbit.  But
 official Dwemthy Paradigms explicitly denote the code -- and the
 altogether character -- inscribed below.  {\bf Save this as
-  \rubyinline|rabbit.rb|.}
+  {\bf\plaininline rabbit.rb}.}
 
 
 \begin{rubycode}
@@ -8386,7 +8383,7 @@ like you didn't die and make a whole new rabbit.
 
 
 Pretty neat looking, wouldn't you say?  The code in
-\rubyinline|rabbit.rb| alters a few math symbols which
+{\bf\plaininline rabbit.rb} alters a few math symbols which
 work only with the \rubyinline|Rabbit|.  Ruby allows
 you to change the behavior of math operators.  After all, {\bf math
   operators are just methods!}
@@ -8644,7 +8641,7 @@ Here, I shall unmask the Array itself for you.
 
 By now, you're probably feeling very familiar with inheritance.  The
 \rubyinline|DwemthysArray| class inherits from
-\rubyinline|Array| and, thus, behaves just like one.
+{\plaininline Array} and, thus, behaves just like one.
 For being such a mystery, it's alarmingly brief, yeah?
 
 So it's an Array.  Filled with monsters.  But what does this extra
@@ -8954,7 +8951,7 @@ let me show you frogs that camp out inside strings.
 
 
 What you are seeing above uses the \rubyinline|%|
-method in the \rubyinline|String| class. This method
+method in the {\plaininline String} class. This method
 takes {\bf a string} and {\bf an array} and slurps them in together to
 create a new string.  The items from the list are yanked out (in
 order) and placed in their saved seats.  It's the open of the business
@@ -9621,7 +9618,7 @@ code.
 \end{consolecode}
 
 
-The \rubyinline|clone| method makes an exact copy of a
+The {\plaininline clone} method makes an exact copy of a
 Ruby object.  How does this differ from regular assignment?
 
 
@@ -9653,20 +9650,20 @@ affecting the original.
 \end{consolecode}
 
 
-The \rubyinline|clone| method doesn't make copies of
+The {\plaininline clone} method doesn't make copies of
 everything attached to the object, though.  In the array above, only
 the array is copied, not all the symbols and strings inside.
 
-You may also see the \rubyinline|dup| method used to
-copy objects.  The \rubyinline|dup| method makes
+You may also see the {\plaininline dup} method used to
+copy objects.  The {\plaininline dup} method makes
 copies which aren't as exact.  For example, there are objects in Ruby
 which are ``frozen'' and can't be altered.  If you
-\rubyinline|clone| the object, you get an exact copy
-which is also frozen.  If you use \rubyinline|dup|,
+{\plaininline clone} the object, you get an exact copy
+which is also frozen.  If you use {\plaininline dup},
 you get an unfrozen copy that you can change if you like.
 
-The \rubyinline|clone| method also copies the
-metaclass of an object, whereas \rubyinline|dup| does
+The {\plaininline clone} method also copies the
+metaclass of an object, whereas {\plaininline dup} does
 not.
 
 
@@ -9689,7 +9686,7 @@ not.
 
 You don't always need to make copies of objects, though, since many
 methods like \rubyinline|collect| and
-\rubyinline|gsub| and
+{\plaininline gsub} and
 \rubyinline|format| make copies for you as part of
 their work.
 
@@ -10066,7 +10063,7 @@ with strings or regexps.
 \end{consolecode}
 
 
-The \rubyinline|gsub| method is named for ``global
+The {\plaininline gsub} method is named for ``global
 substitution.''  Notice how in the first example it replaced the word
 ``cat'' and the first three letters of ``cathodes.''  Strings also
 have a simple \rubyinline|sub| method which will
