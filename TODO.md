@@ -19,6 +19,7 @@ Changes:
     - relayouted them so they always start on top of the page
     - rearranged them so the (cont'd) sidebars follow right upon each other
     - made size of sidebar adjustable (e.g. for the tambourine sidebar)
+  * added missing dr. cham knocking on castle drawing in chapter 4
   * added missing quils drawings at the end of chapter 6
   * replaced listings with minted package for pygmentized code highlighting
     - using minted 2.0-alpha-3 and pygments 2.0pre@e3c10ca6897f
