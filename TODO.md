@@ -4,12 +4,14 @@ ToDo:
  
   * changelog entry in README and prologue
   * quality check - pdf-diff text contents vs. original
+  * page 203: overflow
+  * check: consistency of blue formatted methods (e.g. `format`, `gsub`, ...) across the book
 
 Improvements:
 
   * check \consoleinline in later chapters - many of them are \rubyinline?
-  * keep syntax highlighting in tables on p206?
   * .mobi version
+
 
 Changes:
 
