@@ -8414,7 +8414,7 @@ Where it makes sense, you may choose to use math operators on some of
 your Classes.  Ruby uses these math operators on many of its own
 classes.  Arrays, for example, have a handful of math operators which
 you can see in the list of instance methods when you type:
-\rubyinline|ri Array|.
+\consoleinline|ri Array|.
 
 
 \begin{consolecode}
@@ -8990,13 +8990,13 @@ operates just like this.)
 For the most part, you'll only need \rubyinline|%s|
 (strings), \rubyinline|%d| (integer numbers) or
 \rubyinline|%f| (float numbers) format specifiers.
-The \rubyinline|%p| placeholder will run
+The \rubyinline|%|{\plaininline p} placeholder will run
 \rubyinline|inspect| on an object.
 
 Yeah, so, frog formatting is really handy for building strings that
 are assembled from different kinds of data.  You can learn all the
 various kinds of format specifiers by reading the
-\rubyinline|ri sprintf| page.  I'm just going to give
+\consoleinline|ri sprintf| page.  I'm just going to give
 you a few quick pointers.
 
 Let's say you have the array but you want the items to appear in {\bf
@@ -9930,21 +9930,21 @@ T-9000.
 
 \begin{tabular}{p{0.075\textwidth}p{0.4\textwidth}p{0.44\textwidth}}
 \multicolumn{3}{l}{\bf Character Classes }
-\\ \rubyinline|\d| & matches digits & can also be
-written \rubyinline|[0-9]|
-\\ \rubyinline|\w| & matches word characters (letters,
+\\ {\plaininline \string\d} & matches digits & can also be
+written {\plaininline [0-9]}
+\\ {\plaininline \string\w} & matches word characters (letters,
 numbers and the underscore) & can also be written
-\rubyinline|[A-Za-z0-9_]|
-\\ \rubyinline|\s| & matches whitespace (spaces, tabs,
+{\plaininline [A-Za-z0-9\_]}
+\\ {\plaininline \string\s} & matches whitespace (spaces, tabs,
 carriage returns, line feeds) & a.k.a. 
-\rubyinline|[\t\r\n]| \\ 
-\rubyinline|\D| & matches everything
-{\em but} digits & a negated set \rubyinline|[^\d]|
-\\ \rubyinline|\W| & matches everything {\em but} word
-chars & just like \rubyinline|[^\w]|
-\\ \rubyinline|\S| & matches everything {\em but}
-whitespace & also \rubyinline|[^\s]|
-\\ \rubyinline|.| & the period matches {\bf
+{\plaininline [\string\t\string\r\string\n]} \\ 
+{\plaininline \string\D} & matches everything
+{\em but} digits & a negated set {\plaininline [\string^\string\d]}
+\\ {\plaininline \string\W} & matches everything {\em but} word
+chars & just like {\plaininline [\string^\string\w]}
+\\ {\plaininline \string\S} & matches everything {\em but}
+whitespace & also {\plaininline [\string^\string\s]}
+\\ {\plaininline .} & the period matches {\bf
   everything}. \\
 \end{tabular}
 
@@ -9963,25 +9963,25 @@ to be repeat.
 
 \begin{tabular}{p{0.075\textwidth}p{0.3\textwidth}p{0.54\textwidth}}
 \multicolumn{3}{l}{\bf Quantifiers }
-\\ \rubyinline|{n}| & match exactly {\em n} times &
+\\ {\plaininline \{n\}} & match exactly {\em n} times &
 Precisely three numbers in a row is
 \rubyinline|/\d{3}/|
-\\ \rubyinline|{n,}| & matches {\em n} times or {\em
+\\ {\plaininline \{n,\}} & matches {\em n} times or {\em
   more} & Three or more letters in a row is
 \rubyinline|/[a-z]{3,}/i|
-\\ \rubyinline|{n,n2}| & matches at least {\em n}
+\\ {\plaininline \{n,n2\}} & matches at least {\em n}
 times but no more than {\em n2} times & So,
 \rubyinline|/[\d,]{3,9}/| matches between three and
 nine characters which are numbers or commas
-\\ \rubyinline|*| & the asterisk
-\rubyinline|*| is short for
-\rubyinline|{0,}| & To match a colon, followed by zero
+\\ {\plaininline *} & the asterisk
+{\plaininline *} is short for
+{\plaininline \{0,\}} & To match a colon, followed by zero
 or more word characters: \rubyinline|/:\w*/|
-\\ \rubyinline|+| & the plus is short for
-\rubyinline|{1,}| & To match one or more minus or plus
+\\ {\plaininline +} & the plus is short for
+{\plaininline \{1,\}} & To match one or more minus or plus
 signs, use \rubyinline|/[-+]+/|
-\\ \rubyinline|?| & the question mark is short for
-\rubyinline|{0,1}| & To match three numbers followed
+\\ {\plaininline ?} & the question mark is short for
+{\plaininline \{0,1\}} & To match three numbers followed
 by an optional period: \rubyinline|/\d{3}[.]?/| \\
 \end{tabular}
 
@@ -10066,7 +10066,7 @@ with strings or regexps.
 The {\plaininline gsub} method is named for ``global
 substitution.''  Notice how in the first example it replaced the word
 ``cat'' and the first three letters of ``cathodes.''  Strings also
-have a simple \rubyinline|sub| method which will
+have a simple {\plaininline sub} method which will
 substite only once.
 
 And so this chapter ends, with Blix and the Foxes cruising aloft the
