@@ -4018,7 +4018,7 @@ He scanned the list for anything unfamiliar.  Any classes which didn't
 come with Ruby. \rubyinline|Marshal|,
 {\plaininline String}, \rubyinline|Dir|,
 \rubyinline|LoadError|,
-\rubyinline|Float|.  Each of those came with Ruby.
+{\plaininline Float}.  Each of those came with Ruby.
 
 But further down the list:
 
@@ -10278,7 +10278,7 @@ system. In fact, if you've used the essential
 installed. Akinori Musha, one of Ruby's immensely talented core
 developers, wrote portupgrade, which means that you can use your Ruby
 learning right away to hack up your
-\consoleinline|pkgtools.conf|.
+{\bf\plaininline pkgtools.conf}.
 
 \begin{consolecode}
  cd /usr/ports/lang/ruby18 
@@ -10297,19 +10297,19 @@ believe Ruby is also available through Ximian's Red Carpet.
 \item Other \textbf{Linux} and \textbf{UNIX}
 platforms, even \textbf{OS X} (if the disk images don't work for you): Download
 the latest source code\footnote{http://www.ruby-lang.org/en/downloads/}. 
-For instance, Ruby 1.8.2. To unpack and compile:
+For instance, Ruby 1.8.3. To unpack and compile:
 
 \begin{consolecode}
- tar xzvf ruby-1.8.2.tar.gz 
- cd ruby-1.8.2 
+ tar xzvf ruby-1.8.3.tar.gz 
+ cd ruby-1.8.3 
  ./configure 
  make
  make install
 \end{consolecode}
 
 (Again, the above commands are for installing Ruby from the source
-code. You may need to use su or sudo to give you permission to run the
-make install.)
+code. You may need to use \consoleinline|su| or \consoleinline|sudo| to give you permission to run the
+\consoleinline|make install|.)
 
 \end{itemize}
 
@@ -10318,13 +10318,13 @@ run: \consoleinline|ruby -v|. If Ruby is installed
 properly, you'll see a bit of version info.
 
 \begin{consolecode}
- ruby 1.8.2 (2004-12-25) [i386-mswin32]
+ ruby 1.8.3 (2005-11-25) [i386-mswin32]
 \end{consolecode}
 
 \begin{itemize}
 
 \item To open a command shell in Microsoft Windows, go to the Start Menu
-and select Run.... Type in: cmd. Press OK. A command shell window will
+and select \consoleinline|Run...|. Type in: \consoleinline|cmd|. Press OK. A command shell window will
 appear.
 
 \item To open a command shell on Mac OS X, go to Applications >
@@ -10375,7 +10375,7 @@ Irb is a great calculator.
 The first example demonstrates a bit of math and is read as:
 \emph{220.00 plus 34.15 times 1.08 divided by 12}. The second example
 takes a binary string and converts it to a decimal number. The third
-example computes the number of seconds between now and July 31, 2003
+example computes the number of seconds between \rubyinline|now| and July 31, 2003
 at 8:10 AM. The answers to all of these are printed back to us by Irb
 with a little ASCII arrow pointing.
 
@@ -10405,7 +10405,7 @@ increase by one. And whenever Irb senses that your code is unfinished,
  => :on
 \end{consolecode}
 
-Notice how the depth level increased to 1 when I opened the if
+Notice how the depth level increased to 1 when I opened the \rubyinline|if|
 statement. And how the asterisk indicates the continuation of a line.
 
 \section{Tweaking the Prompt}
@@ -10415,7 +10415,7 @@ forcing you to do anything and, if you want to hack it up, I'm right
 here beside you.
 
 Irb has a few other included prompts which may better appease your
-senses. Try \consoleinline|irb --prompt simple|. This time Irb will treat you to a
+senses. Try \newline \consoleinline|irb --prompt simple|. This time Irb will treat you to a
 very basic set of arrows, allowing you to enter your code without the
 whole status report.
 
@@ -10434,7 +10434,7 @@ prompt by just supplying the name with the
 \consoleinline|irb --prompt null|.)
 
 Making your own prompt is okay as well. Irb is completely customizable
-from inside of itself. The \consoleinline|conf| object
+from inside of itself. The \rubyinline|conf| object
 contaions all of Irb's configuration settings. Some of these
 configuration settings are for controlling the prompt.
 
@@ -10456,8 +10456,8 @@ decor.
 
 Above are the four parts to an Irb prompt. The string continuation
 prompt is displayed when a string is still open when you hit
-\emph{Enter}. The \consoleinline|%3n| describes that Irb should reserve three characters for
-the line number. The \consoleinline|%l| saves a place for displaying the type of
+\emph{Enter}. The \rubyinline|%|{\plaininline 3n} describes that Irb should reserve three characters for
+the line number. The \rubyinline|%l| saves a place for displaying the type of
 string being continued. (If you're continuing a double-quoted string,
 it shows a double quote. If you're continuing a regular expression, it
 shows a slash.)
@@ -10529,8 +10529,8 @@ all the time.
 
 Okay, one last thing and then I'll quit bugging you with all this
 great technology. But I have to say it loud, so take cover! I'm across
-the world here, folks, but the volume comes down from the sky \sout{a
-bold, red crescendo of}
+the world here, folks, but the volume comes down from the sky---a
+bold, red crescendo of---
 
 \begin{center}
 {\Huge{\color{parensaroundricolor}((}\color{ricolor}\textbf{ri}{\color{parensaroundricolor}))}}
@@ -10538,7 +10538,7 @@ bold, red crescendo of}
 
 {\color{belgradeoperatorcolor}
 \bf\large (Ruby's Own 411 or 555-1212 or \emph{Yes, Operator, Get
-    Belgrade on the Line} \sout{-- I'll Be Right Here --} Just Plain
+    Belgrade on the Line}---I'll Be Right Here---Just Plain
   Hammering The Pound Key Until Someone Picks Up\ldots)}
 
 And Ri picks up the line.  ``This is Ri. Class and colon, please.''  
@@ -10575,8 +10575,8 @@ royal cup \emph{Most Blatantly Great Thing Since Michael Dorn}):
 \end{consolecode}
 
 
-It's an unabridged Ruby dictionary servo \sout{the Power of Just Asking is
-at your fingertips} \emph{don't tell me you've never heard of this
+It's an unabridged Ruby dictionary servo---the Power of Just Asking is
+at your fingertips---\emph{don't tell me you've never heard of this
 no-money-down lifetime-supply-of-proper-explanations!}
 
 To get an explanation of any class, along with a complete directory to
