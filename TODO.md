@@ -6,11 +6,15 @@ ToDo:
   * quality check - pdf-diff text contents vs. original
   * page 203: overflow
   * check: consistency of blue formatted methods (e.g. `format`, `gsub`, ...) across the book
+  * sidebars in chapter 8 missing! (see PDF version)
 
 Improvements:
 
   * check \consoleinline in later chapters - many of them are \rubyinline?
   * .mobi version
+  * "Expansion Pak I" in TOC chapter header
+  * make ((ri)) on page 261 huger via anyfontsize package
+  * better irb formatting via pygments?
 
 
 Changes:
